@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>To-Do List</title>
+</head>
+<p>To-Do List:</p>
+<p id="list"></p>
+<button type="button" id="add" onclick="addItem()">Add</button>
+<button type="button" id="remove" onclick="removeItem()">Remove</button>
+
+<body>
+	<style type="text/css">
+		body {
+			font-size: 3em;
+		}
+		button {
+			font-size: 1.5em;
+		}
+	</style>
+  <script type="text/javascript">
+  // Create an empty array
+  let toDoList = [];
+  // Display status of the list
+  function displayList(list) {
+    return document.getElementById("list").innerHTML = list;
+  }
+  // Add item to the list
+  function addItem() {
+    toDoList.push(window.prompt("Add item to your to-do list:"));
+    displayList(toDoList);
+  }
+  // Remove item from the list
+  function removeItem() {
+    toDoList.splice(parseInt(window.prompt('\nRemove an item:\n- Enter the number, i.e. "1"\n- Starting with 0')), 1);
+    displayList(toDoList);
+  }
+  </script>
+</body>
+
+</html>
